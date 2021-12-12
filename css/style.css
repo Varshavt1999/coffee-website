@@ -1,0 +1,1053 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border:1px solid rgba(255,255,255,0.3)
+}
+.wrapper{
+    width: 88%;
+    margin: 0 auto;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+    /* width */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+html::-webkit-scrollbar-track {
+    background:transparent; 
+}
+   
+  /* Handle */
+html::-webkit-scrollbar-thumb {
+    background:#fff;  
+    border-radius: 5rem;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+ol,ul{
+    list-style: none;
+}
+  
+  /* Handle on hover
+html::-webkit-scrollbar-thumb:hover {
+    background: #fff; 
+} */
+body{
+    background: var(--bg);
+}
+
+.header{
+    background:var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100px;
+    left: 0;
+    z-index:100;
+}
+.header .logo{
+    height: 6rem;
+    display: inline-block;
+}
+.header .logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.header .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .navbar li{
+    margin-right: 20px;
+}
+.header .navbar li:last-child{
+    margin-right: 0;
+}
+.header .navbar li a{
+    font-size: 16px;
+    color: #fff;
+}
+.header .navbar li a:hover{
+    color: var(--main-color);
+    border-bottom:1px solid var(--main-color);
+    padding-bottom:5px;
+}
+header .icons{
+    width: 8%;
+    display: flex;
+    justify-content: space-between;
+}
+header .icons .zmdi{
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+header .icons .zmdi:last-child{
+    margin-right: 0;
+}
+header .icons .zmdi:hover{
+    color: var(--main-color);
+}
+header .icons .zmdi-menu{
+    display: none;
+}
+header div.search{
+    position: absolute;
+    top: 105%;
+    right: 7%;
+    background: #fff;
+    width: 30%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    text-transform: none;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+header div.search input{
+    height: 100%;
+    font-size: 18px;
+    color: var(--black);  
+    display: block;
+}
+header div.search label{
+    display: block;
+}
+header div.search label .zmdi-search{
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--black);  
+}
+header div.search label .zmdi-search:hover{
+    color:var(--main-color);
+}
+header .cart_item_conatiner{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: calc(100vh - 100px);
+    width: 25%;
+    background: #fff;
+    padding: 20px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header .cart_item_conatiner .cart_item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding:0 20px;
+    /* margin-bottom: 20px; */
+}
+header .cart_item_conatiner .cart_item .zmdi-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--black); 
+    font-weight: 600;
+}
+header .cart_item_conatiner .cart_item .zmdi-close:hover{
+    color: var(--main-color);
+}
+header .cart_item_conatiner .cart_item .img{
+    width: 35%;
+    margin-right: 30px;
+}
+header .cart_item_conatiner .cart_item .img img{
+    width: 100%;
+    display: block;
+}
+header .cart_item_conatiner .cart_item .content{
+    margin-right: 10px;
+}
+header .cart_item_conatiner .cart_item .content h3{
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--black);
+}
+header .cart_item_conatiner .cart_item .content div.price{
+    font-size: 12px;
+    color: var(--main-color);
+}
+header .cart_item_conatiner a.button{
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    background: var(--main-color);
+}
+header .cart_item_conatiner a.button:hover{
+    letter-spacing: 1px;
+}
+header .cart_item_conatiner.active{
+    right: 0;
+}
+header div.search.active{
+    transform: scaleY(1)
+}
+
+#home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../images/home-img.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 18% 0;
+}
+#home .container{
+    max-width: 50%;
+}
+#home .container h3{
+    font-size: 58px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+#home .container p{
+    font-size: 20px;
+    color: #eee;
+    font-weight: lighter;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+#home .container a.button{
+    padding: 10px 24px;
+    color: #fff;
+    font-size: 16px;
+    background: var(--main-color);
+}
+#home .container a.button:hover{
+    letter-spacing: 1px;
+}
+
+#about{
+    text-align: center;
+    padding: 2% 0;
+}
+#about h1{
+    color: #fff;
+    font-size: 46px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#about h1 span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+#about div.container-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#about div.container-box div.left-img{
+    width: 50%;
+}
+#about div.container-box div.left-img img{
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+#about div.container-box div.right-content{
+    width: 50%;
+    padding: 60px 20px;
+    text-align: left;
+    background-color: var(--black);
+}
+#about div.container-box div.right-content h3{
+    color: #fff;
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+#about div.container-box div.right-content p{
+    color: #eee;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-weight:300;
+    line-height: 1.8;
+}
+#about div.container-box div.right-content a.button{
+    padding: 10px 24px;
+    color: #fff;
+    font-size: 16px;
+    background: var(--main-color);
+}
+#about div.container-box div.right-content a.button:hover{
+    letter-spacing: 1px;
+}
+
+#menu{
+    text-align: center;
+    padding: 2% 0;
+}
+#menu h1{
+    color: #fff;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#menu h1 span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+#menu div.container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#menu div.container div.item{
+    width: 30%;
+    text-align: center;
+    border:var(--border);
+    padding: 45px 20px;
+    margin-bottom: 20px;
+}
+#menu div.container div.item:nth-child(4){
+    margin-bottom: 0;
+}
+#menu div.container div.item:nth-child(5){
+    margin-bottom: 0;
+}
+#menu div.container div.item:last-child{
+    margin-bottom: 0;
+}
+#menu div.container div.item div.image{
+    width: 30%;
+    margin: 0 auto 10px;
+}
+#menu div.container div.item div.image img{
+    width: 100%;
+    display: block;
+}
+#menu div.container div.item h3{
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#menu div.container div.item div.price{
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#menu div.container div.item div.price span{
+    font-size: 16px;
+    margin-left: 10px;
+    text-decoration: line-through;
+}
+#menu div.container div.item a.button{
+    padding: 10px 24px;
+    color: #fff;
+    font-size: 16px;
+    background: var(--main-color);
+}
+#menu div.container div.item a.button:hover{
+    letter-spacing: 1px;
+}
+#menu div.container div.item:hover{
+    background: #fff;
+}
+#menu div.container div.item:hover h3{
+    color:var(--black);
+}
+#menu div.container div.item:hover p{
+    color:var(--black);
+}
+#menu div.container div.item:hover div.price{
+    color:var(--black);
+}
+#menu div.container div.item:hover div.price span{
+    color:var(--black);
+}
+#menu div.container div.item:hover a.button{
+    color:#000;
+}
+
+#products{
+    padding: 2% 0;
+    text-align: center;
+}
+#products h1{
+    color: #fff;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#products h1 span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+#products div.box-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#products div.box-container div.box{
+    border: var(--border);
+    padding: 30px 40px 20px;
+    width: 30%;
+}
+#products div.box-container div.box div.icons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#products div.box-container div.box div.icons a{
+    height: 50px;
+    width: 50px;
+    border: var(--border);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+#products div.box-container div.box div.icons a:hover{
+    background: var(--main-color);
+}
+#products div.box-container div.box div.icons a:last-child{
+    margin-right: 0;
+}
+#products div.box-container div.box div.icons a .zmdi{
+    color: #fff;
+    font-size: 24px;
+}
+#products div.box-container div.box div.image{
+    width: 60%;
+    margin: 0 auto 20px;
+}
+#products div.box-container div.box div.image img{
+    display: block;
+    width: 100%;
+}
+#products div.box-container div.box div.content{
+
+}
+#products div.box-container div.box div.content h3{
+    font-size: 28px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+#products div.box-container div.box div.content div.stars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#products div.box-container div.box div.content div.stars .zmdi{
+    color: var(--main-color);
+    margin-right: 5px;
+    font-size: 22px;
+}
+#products div.box-container div.box div.price{
+    color: #fff;
+    font-size: 25px;
+}
+#products div.box-container div.box div.price span{
+    font-size: 16px;
+    margin-left: 10px;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+#review{
+    padding: 2% 0;
+    text-align: center;
+}
+#review h1{
+    color: #fff;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#review h1 span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+#review div.review-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#review div.review-container div.review{
+    border: var(--border);
+    padding: 30px 40px;
+    width: 30%;
+}
+#review div.review-container div.review div.quote-img{
+    width: 20%;
+    margin: 0 auto 20px;
+}
+#review div.review-container div.review div.quote-img img{
+    width: 100%;
+    display: block;
+}
+#review div.review-container div.review p{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+#review div.review-container div.review div.user{
+    width: 32%;
+    margin :0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#review div.review-container div.review div.user img{
+    width: 100%;
+    display: block;
+    
+}
+#review div.review-container div.review h3{
+    font-size: 24px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+#review div.review-container div.review div.stars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#review div.review-container div.review div.stars .zmdi{
+    color: var(--main-color);
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+#contact{
+    padding: 2% 0;
+    text-align: center;
+}
+#contact h1{
+    color: #fff;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#contact h1 span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+#contact div.container-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+#contact div.container-box  .map{
+    width: 50%;
+    object-fit: cover;
+}
+#contact div.container-box div.contact-details{
+    width: 50%;
+    background: var(--black);
+    padding: 4% 0 2%;
+    
+}
+#contact div.container-box div.contact-details h2{
+    font-size: 36px;
+    color: #fff;
+    font-weight: normal;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+#contact div.container-box div.contact-details form{
+
+}
+#contact div.container-box div.contact-details form div.input-box{
+    width: 90%;
+    margin: 0 auto;
+    background:var(--bg);
+    display: flex;
+    justify-content: flex-start;
+    border: var(--border);
+    padding: 17px;
+    margin-bottom: 22px;
+}
+#contact div.container-box div.contact-details form div.input-box:last-child{
+    margin-bottom: 30px;
+}
+#contact div.container-box div.contact-details form div.input-box label{
+    margin-right: 20px;
+}
+#contact div.container-box div.contact-details form div.input-box label .zmdi{
+    color: #fff;
+    font-size: 26px;
+}
+#contact div.container-box div.contact-details form div.input-box input{
+    text-transform: none;
+    color: #fff;
+    background: none;
+    font-size: 16px;
+}
+#contact div.container-box div.contact-details form  .submit{
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    background: var(--main-color);
+    cursor: pointer;
+}
+#contact div.container-box div.contact-details form  .submit:hover{
+    letter-spacing: 1px;
+}
+
+#blogs{
+    padding: 2% 0;
+    text-align: center;
+}
+#blogs h1{
+    color: #fff;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#blogs h1 span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+#blogs div.item-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#blogs div.item-container div.item{
+    border: var(--border);
+    /* padding: 30px 40px; */
+    width: 30%;
+}
+#blogs div.item-container div.item div.img-box{
+    width: 100%;
+    overflow: hidden;
+}
+#blogs div.item-container div.item div.img-box img{
+    width: 100%;
+    display: block;
+    /* object-fit: cover; */
+}
+#blogs div.item-container div.item:hover div.img-box img{
+    transform: scale(1.4);
+}
+#blogs div.item-container div.item div.content{
+    padding: 25px 20px;
+    text-align: left;
+}
+#blogs div.item-container div.item div.content h3{
+    font-size: 24px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+#blogs div.item-container div.item div.content h6{
+    font-size: 20px;
+    color:var(--main-color);
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+#blogs div.item-container div.item div.content p{
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+#blogs div.item-container div.item div.content a.button{
+    padding: 10px 30px;
+    color: #fff;
+    font-size: 16px;
+    background: var(--main-color);
+}
+#blogs div.item-container div.item div.content a.button:hover{
+    letter-spacing: 1px;
+}
+
+footer{
+    padding: 2% 0;
+    text-align: center;
+}
+footer div.social-media{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+footer div.social-media .zmdi{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    border: var(--border);
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+footer div.social-media .zmdi:last-child{
+    margin-right: 0;
+}
+footer div.social-media .zmdi:hover{
+    background: var(--main-color);
+}
+footer div.tabs{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer div.tabs a.item{
+    margin-right: 10px;
+    border: var(--border);
+    padding: 8px 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+footer div.tabs a.item:hover{
+    background: var(--main-color);
+}
+footer p{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+footer p span{
+    color: var(--main-color);
+}
+
+
+@media all and (max-width:1280px){
+    header .cart_item_conatiner{
+        width: 30%;
+    }
+    #about div.container-box div.right-content p{
+        font-size: 16px;
+    }
+    #about div.container-box div.right-content{
+        padding: 30px 20px;
+    }
+    #about div.container-box div.right-content p{
+        margin-bottom: 10px;
+    }
+}
+@media all and (max-width:1080px){
+    #home .container h3{
+        font-size: 50px;
+    }
+    #home .container p{
+        font-size: 18px;
+    }
+    #review div.review-container div.review{
+        padding: 30px 20px;
+    }
+    #blogs div.item-container div.item div.content{
+        padding: 25px 10px;
+    }
+    #blogs div.item-container div.item div.content h3{
+        font-size: 22px;
+    }
+    #blogs div.item-container div.item div.content h6{
+        font-size: 18px;
+    }
+}
+@media all and (max-width:980px){
+    #home .container h3{
+        font-size: 40px;
+    }
+    #about div.container-box div.left-img{
+        width: 100%;
+    }
+    #about div.container-box div.right-content{
+        width: 100%;
+    }
+    #menu div.container div.item{
+        width: 48%;
+    }
+    #menu div.container div.item:nth-child(4){
+        margin-bottom: 20px;
+    }
+    #products div.box-container div.box{
+        width: 48%;
+        margin-bottom: 20px;
+    }
+    #products div.box-container div.box:last-child{
+        margin: 0 auto;
+    }
+    #review div.review-container div.review{
+        width: 48%;
+        margin-bottom: 20px;
+    }
+    #review div.review-container div.review:last-child{
+        margin: 0 auto;
+    }
+    #blogs div.item-container div.item{
+        width: 48%;
+        margin-bottom: 20px;
+    }
+    #blogs div.item-container div.item:last-child{
+        margin: 0 auto;
+    }
+    footer p{
+        font-size: 18px;
+    }
+    #contact h1{
+        font-size: 34px;
+    }
+    #contact div.container-box .map{
+        width: 100%;
+    }
+    footer div.tabs a.item{
+        margin-right: 55px;
+    }
+    footer div.tabs a.item:last-child{
+        margin-right: 0;
+    }
+}
+
+@media all and (max-width:768px){
+    header .icons .zmdi-menu{
+        display: block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        display: block;
+        padding: 20px;
+        width: 45%;
+        text-align: center;
+        height: calc(100vh - 100px);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+    .header .navbar li{
+       margin: 0 0 30px;
+    }
+    .header .navbar li:last-child{
+        margin-bottom: 0;
+    }
+    .header .navbar li a{
+        font-size: 16px;
+        color: var(--black);
+        font-weight: 600;
+    }
+    .header .navbar.active{
+        right: 0;
+    }
+    header .cart_item_conatiner{
+        width: 50%;
+    }
+    header .cart_item_conatiner .cart_item .content{
+        margin-right: 20px;
+    }
+    header .cart_item_conatiner .cart_item .content h3 {
+        font-size: 12px;
+    }
+    header div.search.active{
+        width: 90%;
+    }
+    header .icons{
+        width: 20%;
+    } 
+    #home .container h3{
+        font-size: 34px;
+    }
+    #home .container p{
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    #about h1{
+        font-size: 34px;
+    }
+    #about div.container-box div.right-content h3{
+        font-size: 28px;
+    }
+    #menu h1{
+        font-size: 34px;
+    }
+    #menu div.container div.item h3 {
+        font-size: 22px; 
+    }
+    #menu div.container div.item div.price {
+        font-size: 22px;
+    }
+    #products h1{
+        font-size: 34px;
+    }
+    #products div.box-container div.box div.content h3{
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    #products div.box-container div.box div.content div.stars {
+        margin-bottom: 10px;
+    }
+    #review h1{
+        font-size: 34px;
+    }
+    #contact div.container-box div.contact-details{
+        width: 100%;
+    }
+    #contact div.container-box div.contact-details h2{
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    #blogs h1{
+        font-size: 34px;
+    }
+    footer div.tabs a.item {
+        margin-right: 25px;
+    }
+    footer div.tabs a.item:last-child{
+        margin-right: 0;
+    }
+    
+}
+@media all and (max-width:640px){
+    header .cart_item_conatiner{
+        width: 58%;
+    }
+    header .cart_item_conatiner .cart_item .zmdi-close{
+        font-size: 14px;
+    }
+    #home .container h3{
+        font-size: 26px;
+    }
+    #home {
+        padding: 22% 0 5%;
+    }
+    .header{
+        height: 80px;
+    }
+    #about h1{
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    #about div.container-box div.right-content h3{
+        font-size: 26px;
+    }
+    #about div.container-box div.right-content p{
+        font-size: 15px;
+    }
+    #menu h1{
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    #menu div.container div.item{
+        width: 90%;
+        margin: 0 auto 20px;
+    }
+    #menu div.container div.item:nth-child(5){
+        margin-bottom: 20px;
+    }
+    #products h1{
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    #products div.box-container div.box{
+        width: 90%;
+        margin: 0 auto 20px;
+    }
+    #review h1{
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    #review div.review-container div.review{
+        width: 90%;
+        margin: 0 auto 20px;
+    }
+    #contact h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    #contact div.container-box div.contact-details h2 {
+        font-size: 22px;
+    }
+    #contact div.container-box div.contact-details form div.input-box {
+        padding: 10px;
+    }
+    #blogs div.item-container div.item{
+        width: 90%;
+        margin: 0 auto 20px;
+    }
+    footer p{
+        font-size: 15px;
+    }
+@media all and (max-width:480px){
+    header .cart_item_conatiner {
+        width: 65%;
+    }
+    header .icons{
+        width: 30%;
+    }
+    #home {
+        padding-top: 30%;
+    }
+    #home .container{
+        max-width: unset;
+    }
+    #review h1{
+        font-size: 25px;
+    }
+    footer div.tabs a.item {
+        margin-right: 15px;
+    }
+    footer p{
+        font-size: 14px;
+    }
+@media all and (max-width:360px){
+
+}
+@media all and (max-width:320px){
+
+}
